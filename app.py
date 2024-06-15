@@ -29,7 +29,7 @@ external_stylesheets = [
 ]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
+server = app.server
 
 # Create the Top 10 ad spend
 fig = px.bar(top_10, x=top_10.index, y='Amount spent (INR)',
@@ -94,7 +94,7 @@ app.layout = html.Div([
 
 ])
 
-
+app.title = "General Election 2024 Dashboard"
 
 @app.callback(
     Output('state-graphs-container', 'children'),
